@@ -21,6 +21,7 @@ sudo apt-get upgrade -y
 echo "Instalando pacotes essenciais..."
 sudo apt-get install -y \
     apt-transport-https ca-certificates curl wget gnupg2 git build-essential \
+    net-tools iputils-ping dnsutils traceroute htop iftop \
     software-properties-common
 
 ## instalacao do usign-player
@@ -28,9 +29,8 @@ echo "Instalando o usign-player..."
 sudo apt-get install usign-player
 
 if [ ! -f /etc/cron.hourly/usign-player ]; then
-    sudo rm /etc/cron.hourly/usign-player
-    wget -O /etc/cron.hourly/usign-player https://raw.githubusercontent.com/jbtec-usign/wtlinux/main/maintenance.sh
-    chmod +x /etc/cron.hourly/usign-player
+    sudo wget -O /etc/cron.hourly/usign-player https://raw.githubusercontent.com/jbtec-usign/wtlinux/main/maintenance.sh
+    sudo chmod +x /etc/cron.hourly/usign-player
     if [ ! -f /etc/cron.hourly/usign-player ]; then
         echo "Falha ao instalar o script de manutenção!"
     fi
