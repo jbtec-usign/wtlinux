@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# apt-get update
-# apt-get upgrade usign-player
+# apt-get update -y
+# apt-get upgrade -y usign-player

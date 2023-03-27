@@ -1,5 +1,12 @@
 #!/bin/bash
 
+## pacotes essenciais
+echo "Instalando pacotes essenciais..."
+sudo apt-get install -y \
+    apt-transport-https ca-certificates curl wget gnupg2 git build-essential \
+    net-tools iputils-ping dnsutils traceroute htop iftop \
+    software-properties-common
+
 # preparando o ambiente
 if [ ! -d /etc/apt/sources.list.d ]; then
     sudo mkdir -p /etc/apt/sources.list.d
@@ -16,13 +23,6 @@ sudo apt-get update
 
 ## atualização de pacotes
 sudo apt-get upgrade -y
-
-## pacotes essenciais
-echo "Instalando pacotes essenciais..."
-sudo apt-get install -y \
-    apt-transport-https ca-certificates curl wget gnupg2 git build-essential \
-    net-tools iputils-ping dnsutils traceroute htop iftop \
-    software-properties-common
 
 ## instalacao do usign-player
 echo "Instalando o usign-player..."
